@@ -47,3 +47,17 @@ chrome.runtime.onInstalled.addListener(async ({ reason }) => {
 storageService.onRulesChanged((rules) => {
   void syncDynamicRules(rules)
 })
+
+// ── Message handler ──────────────────────────────────────────────
+chrome.runtime.onMessage.addListener(
+  (message: { type: string }, _sender, sendResponse) => {
+    if (message.type === 'GET_ACTIVE_RULES_COUNT') {
+      chrome.declarativeNetRequest
+        .getDynamicRules()
+        .then((rules) => { sendResponse({ count: rules.length }) })
+        .catch(() => { sendResponse({ count: 0 }) })
+      return true // keep message channel open
+    }
+    return false
+  }
+)
