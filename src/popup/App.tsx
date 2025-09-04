@@ -15,6 +15,7 @@ export function App() {
   const {
     rules,
     isLoaded,
+    error,
     initialize,
     addRule,
     updateRule,
@@ -65,6 +66,23 @@ export function App() {
     return (
       <div className="flex items-center justify-center flex-1 min-h-48">
         <div className="w-5 h-5 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center flex-1 p-8 gap-3">
+        <p className="text-sm text-red-400 text-center">{error}</p>
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={() => {
+            void initialize()
+          }}
+        >
+          Retry
+        </Button>
       </div>
     )
   }
