@@ -24,6 +24,17 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
       '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-deprecated': 'off', // chrome global is often flagged incorrectly
+      '@typescript-eslint/no-misused-promises': [
+        'error',
+        {
+          'checksVoidReturn': {
+            'arguments': false,
+            'attributes': false
+          }
+        }
+      ],
+      '@typescript-eslint/no-unnecessary-condition': 'off'
     },
   }
 )

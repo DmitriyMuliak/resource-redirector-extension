@@ -9,6 +9,11 @@ export default defineConfig({
     react(),
     crx({ manifest }),
   ],
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
