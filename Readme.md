@@ -4,6 +4,15 @@ A high-performance Chrome Extension (Manifest V3) designed for developers to int
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="public/icons/MainLayout.png" width="400" alt="Main Layout" />
+  <img src="public/icons/newRulePopup.png" width="400" alt="Add New Rule" />
+</p>
+
+---
+
 ## 🚀 Key Features
 
 - **Granular Interception:** Redirect requests based on exact URLs or complex Regex patterns.
